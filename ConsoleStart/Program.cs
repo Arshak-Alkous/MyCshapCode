@@ -4,7 +4,7 @@ using ConsoleStart;
 using System;
 using System.IO;
 
-//UseStringDemo();
+UseStringDemo();
 void UseStringDemo()
 {
     StringDemo demo = new StringDemo();
