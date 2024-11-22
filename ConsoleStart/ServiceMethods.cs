@@ -114,5 +114,26 @@ namespace ConsoleStart
             }
         }
 
+        public static int GetPenalty(int carryon, int extrakiloOfAllBag, int numofadditionalbag)
+        {
+            int penalty = 0;
+            if (carryon <= 5 && extrakiloOfAllBag == 0 && numofadditionalbag==0) { return 0; }
+            else
+            {
+                penalty += carryon > 5 ? (carryon - 5) * 35 : 0;
+                penalty += extrakiloOfAllBag * 35;
+                penalty += numofadditionalbag * 45;
+                return penalty;
+            }
+            /*bag1=15  --> penalty+=0 , bag2=16 --> penalty+=1*35 , bag3=16 --> penalty+=1*35
+            numofadditionalbag=2 --> penalty+=2*45
+            --> penalty == 160
+
+             but if int bag = total amount of kilos --> bag == 15+16+16 == 47  --> penalty+=(47-15)*35 
+            numofadditionalbag=2 --> penalty+=2*45
+             --> penalty == (32 *35 )+ (2*45)
+            */
+        }
+
     }
 }
